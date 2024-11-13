@@ -1,3 +1,28 @@
 body{
-    background-color: blue;
+    font-family: arial;
+    background-color: black;
+    background-image: url("home.jpg");
+
+}
+nav{
+    font-family: arial;
+    display: ;
+    
+}
+a{
+    font-family: arial;
+    color: white;
+
+}
+h1{
+    font-family: arial;
+    color: white;
+}
+.blue_pic{
+    height: 100vh;
+}
+img{
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
 }
