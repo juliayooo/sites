@@ -13,7 +13,7 @@ function changeImage(){
         
     }
     console.log("inside changeImage", counter);
-    let bgImage = "url(home" + counter + ".jpg)";
+    let bgImage = "url(home" + counter + ".JPG)";
     document.body.style.backgroundImage = bgImage;
     document.body.style.backgroundImage.height = "100vh;";
     counter++;
