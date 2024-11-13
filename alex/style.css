@@ -5,11 +5,13 @@ nav{
     padding: 30px;
     justify-content: space-around;
     position: fixed;
+    padding: 30px;
 
     
 }
 a{
     font-family: arial;
+    font-size: 20px;
     color: white;
     display: block;
     position: flex;
@@ -29,6 +31,7 @@ img{
     justify-content: center;
     justify-items: center;
     align-items: center;
+
 }
 .nav_container{
     height: 100vh;
@@ -36,4 +39,22 @@ img{
     background-color: rgb(0 0 0 / 50%); 
 
 
+}
+.ig{
+    width: 18px;
+}
+.email{
+    width: 18px;
+}
+.performance1{
+    visibility: hidden;
+}
+.performance2{
+    visibility: hidden;
+    
+}
+.performance3{
+    visibility: hidden;
+
+    
 }
