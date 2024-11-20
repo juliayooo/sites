@@ -1,7 +1,6 @@
 
 nav{
     font-family: arial;
-    display: block;
     padding: 30px;
     justify-content: space-around;
     position: fixed;
@@ -9,11 +8,14 @@ nav{
 
     
 }
+.i {
+    display: block;
+    margin-bottom: 10px;
+}
 a{
     font-family: arial;
     font-size: 20px;
     color: white;
-    display: block;
     position: flex;
     justify-content: space-around;
     padding: 10px;
@@ -46,15 +48,26 @@ img{
 .email{
     width: 18px;
 }
-.performance1{
-    visibility: hidden;
+#performance1{
+    visibility: visible;
+    
 }
 .performance2{
-    visibility: hidden;
+    visibility: visible;
     
 }
-.performance3{
-    visibility: hidden;
+#performance3{
+    visibility: visible;
 
     
+}
+.socials a img {
+    display: inline-block;
+    position: absolute;
+}
+.performance{
+    position: fixed;
+}
+.bodycontainer{
+    position: fixed;
 }
