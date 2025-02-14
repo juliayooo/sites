@@ -18,12 +18,95 @@
     </nav>
     <br>
     <h1>Paintings</h1>
+    <div class="series-container">
+        <button class="seriesbtn" id="1">Reminiscing Home : 1972 - 1980</button>
+        <button class="seriesbtn" id="2">Portraits : 90s - present</button>
+        <button class="seriesbtn" id="3">Inside Africa : 2000s</button>
+        <button class="seriesbtn" id="4">Naturally Beautiful (nature-based work) : 2000s</button>
+        <button class="seriesbtn" id="5">Bubbles : 2020 - present</button>
+        <button class="seriesbtn" id="6">Sketches : 1972 - present</button>
+        <button class="seriesbtn" id="7">Justice (social/environmental/global peace-themed work) : 2020 - Present</button>
+        </div>
     <div class="assets_container">loading...</div>
 
+    
     
 
 
     <script type="module">
+        // GET ALL BUTTON TABS
+
+        const home = document.getElementById("1");
+        const portraits = document.getElementById("2");
+        const africa = document.getElementById("3");
+        const nature = document.getElementById("4");
+        const bubbles = document.getElementById("5");
+        const sketches = document.getElementById("6");
+        const justice = document.getElementById("7");
+
+        var currSelection = "home/";
+        setcolors(home);
+        home.addEventListener("click", () => {
+            setcolors(home);
+            currSelection = "home";
+            loadImages();
+
+        });
+        portraits.addEventListener("click", () => {
+            setcolors(portraits);
+            currSelection = "portraits/";
+            loadImages("portraits");
+
+        });
+        africa.addEventListener("click", () => {
+            setcolors(africa);
+            currSelection = "africa/";
+            loadImages("africa");
+
+
+        });
+        nature.addEventListener("click", () => {
+            setcolors(nature);
+            currSelection = "nature/";
+
+            loadImages("nature");
+
+
+        });
+        bubbles.addEventListener("click", () => {
+            setcolors(bubbles);
+            currSelection = "bubbles/";
+
+            loadImages("bubbles");
+
+
+        });
+        sketches.addEventListener("click", () => {
+            setcolors(sketches);
+            currSelection = "sketches/";
+
+            loadImages("sketches");
+
+
+        });
+        justice.addEventListener("click", () => {
+            setcolors(justice);
+            currSelection = "justice/";
+
+            loadImages("justice");
+
+
+        });
+
+        function setcolors(currSelect){
+            const tabs = document.querySelectorAll(".seriesbtn");
+            tabs.forEach(tab => {
+                
+                    tab.style.backgroundColor = "rgb(150, 178, 142)";
+            });
+            currSelect.style.backgroundColor = "rgb(220, 236, 215)";
+        }
+
         // Import the functions you need from the SDKs you need
         import { initializeApp } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-app.js";
         import { getStorage, ref, listAll, getDownloadURL } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-storage.js";
@@ -46,9 +129,12 @@
 
         const storage = getStorage(app);
         const assetsContainer = document.querySelector(".assets_container");
+        
 
         async function loadImages() {
-        const folderRef = ref(storage, 'paintings/');
+
+        const currFolder = 'paintings/' + currSelection;
+        const folderRef = ref(storage, currFolder);
 
         try {
             const list = await listAll(folderRef);

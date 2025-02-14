@@ -51,6 +51,7 @@ a{
 }
 /* PAINTINGS */
 .assets_container{
+    background-color: rgb(220, 236, 215);
     font-family: "Lexend Exa";
     color: rgb(76, 88, 72);
     position: absolute;
@@ -68,6 +69,19 @@ a{
     justify-content: space-around;
     margin: 1vw;
 
+
+}
+.series-container{
+    display: flex;
+    justify-content: space-between;
+}
+.seriesbtn{
+    font-family: "Lexend Exa";
+    background-color: rgb(172, 206, 162);
+    border: 0px;
+    padding: 20px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
 
 }
 
