@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Paintings</title>
+
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="paintings.html">Paintings</a>
+        <a href="about.html">About</a>
+        <a href="cv.html">CV</a>
+        <a href="contact.html">Contact/Purchase</a>
+    </nav>
+    <br>
+    <h1>Paintings</h1>
+    <div class="assets_container">loading...</div>
+
+    
+
+
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-app.js";
+        import { getStorage, ref, listAll, getDownloadURL } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-storage.js";
+
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+          apiKey: "AIzaSyB5YQFNhtywRP-KknxmHSCzfFrghi-PLzc",
+          authDomain: "dwayne-4c665.firebaseapp.com",
+          projectId: "dwayne-4c665",
+          storageBucket: "dwayne-4c665.firebasestorage.app",
+          messagingSenderId: "61918685474",
+          appId: "1:61918685474:web:9b06efe27736b46380dd7b"
+        };
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+
+        const storage = getStorage(app);
+        const assetsContainer = document.querySelector(".assets_container");
+
+        async function loadImages() {
+        const folderRef = ref(storage, 'paintings/');
+
+        try {
+            const list = await listAll(folderRef);
+
+            // Fetch URLs for each file
+            const urls = await Promise.all(
+                list.items.map(item => getDownloadURL(item))
+            );
+            assetsContainer.innerHTML = "";
+            // Display the images
+            urls.forEach(url => displayImage(url));
+        } catch (error) {
+            console.error("Error retrieving images:", error);
+        }
+    }
+
+    // Function to display an image
+    function displayImage(url) {
+        const img = document.createElement("img");
+        img.src = url;
+        img.style.width = "20vw";
+        // img.style.width = "100px"; 
+        assetsContainer.appendChild(img); 
+    }
+
+    loadImages();
+      </script>
+</body>
+</html>

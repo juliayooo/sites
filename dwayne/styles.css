@@ -1,0 +1,89 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Exa:wght@100..900&display=swap');
+body{
+ background-color: rgb(255, 255, 255);   
+ overflow-x: hidden;
+}
+h1, h2, p{
+    color: rgb(76, 88, 72);
+    text-align: center;
+    font-family: "Lexend Exa";
+    font-weight: bold;
+}
+
+nav{
+    display: flex;
+    justify-content: space-around;  
+    font-family: Lexend Exa;
+    font-size: 1.5vw;
+  
+
+}
+a{
+    color: rgb(76, 88, 72); 
+}
+.p{
+    display: block;
+
+}
+/* FONT */
+.lexend-exa-800 {
+    font-family: "Lexend Exa", serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+  }
+
+/* ABOUT PAGE  */
+.biowrapper{
+    position: absolute;
+
+    /* centering and layout */
+    display: flex;
+    text-align: center;
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
+    position: absolute;
+    padding-left: 20vw;
+    padding-right: 20vw;
+
+}
+/* PAINTINGS */
+.assets_container{
+    font-family: "Lexend Exa";
+    color: rgb(76, 88, 72);
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+    align-items: center;
+}
+.assets_container img{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    justify-content: space-around;
+    margin: 1vw;
+
+
+}
+
+/* CV */
+
+.cv-container{
+    position: absolute;
+
+    /* centering and layout */
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    position: absolute;
+    padding-left: 20vw;
+    padding-right: 20vw;
+
+    /* style */
+    font-family: "Lexend Exa";
+}
