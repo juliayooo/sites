@@ -43,6 +43,8 @@
         const bubbles = document.getElementById("5");
         const sketches = document.getElementById("6");
         const justice = document.getElementById("7");
+        const paintInfo = "https://opensheet.elk.sh/1ahPA_jopqKVbZzWkHDxlhAAVIwQHymJ--yEliBdpo2Q/1";
+
 
         var currSelection = "home/";
         setcolors(home);
@@ -139,25 +141,55 @@
         try {
             const list = await listAll(folderRef);
 
+            assetsContainer.innerHTML = "";
             // Fetch URLs for each file
             const urls = await Promise.all(
                 list.items.map(item => getDownloadURL(item))
+
             );
             assetsContainer.innerHTML = "";
+
             // Display the images
-            urls.forEach(url => displayImage(url));
+            urls.forEach(url => displayImage(url, url.name));
         } catch (error) {
             console.error("Error retrieving images:", error);
         }
     }
 
     // Function to display an image
-    function displayImage(url) {
+    function displayImage(url, info) {
+        const imgContainer = document.createElement("div");
         const img = document.createElement("img");
         img.src = url;
         img.style.width = "20vw";
-        // img.style.width = "100px"; 
+        // img.style.width = "100px";
+        imgContainer.appendChild(img);
         assetsContainer.appendChild(img); 
+        displayInfo(info, imgContainer);
+    }
+    async function displayInfo(info, imgDiv){
+        try {
+                // Fetch data from Google Sheets
+            let response = await fetch(paintInfo);
+            let data = await response.json();
+            console.log(data);
+            data.forEach((line) => {
+
+                // MAKE HEADINGS THAT START W * BOLD
+                if (line.FILENAME.startsWith("info")){
+                    const pInfo = document.createElement("p");
+                    pInfo.textContent = "hi" + line.NAME + line.YEAR + line.MATERIAL> + line.DIMENSIONS;
+                    
+
+                }
+                
+            }
+        
+        );
+        } catch (error) {
+        console.error("Error:", error);
+        }
+
     }
 
     loadImages();
