@@ -5,6 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <title>Paintings</title>
+    <style>
+
+        .imgContainer{
+            display: flex;
+            position: relative;
+            flex-wrap: wrap;
+            flex-direction: row;
+            width: 50vw;
+            justify-content: left;
+        }
+        .imgContainer p{
+            text-align: left;
+            display: block;
+            word-wrap: break-word;
+        }
+    </style>
 
 </head>
 <body>
@@ -149,8 +165,14 @@
             );
             assetsContainer.innerHTML = "";
 
-            // Display the images
-            urls.forEach(url => displayImage(url, url.name));
+
+            for (const item of list.items) {
+            const url = await getDownloadURL(item);
+            const filename = item.name; // Get filename from Firebase
+            displayImage(url, filename);
+        }
+
+
         } catch (error) {
             console.error("Error retrieving images:", error);
         }
@@ -159,14 +181,16 @@
     // Function to display an image
     function displayImage(url, info) {
         const imgContainer = document.createElement("div");
+        imgContainer.className = "imgContainer";
         const img = document.createElement("img");
         img.src = url;
         img.style.width = "20vw";
         // img.style.width = "100px";
         imgContainer.appendChild(img);
-        assetsContainer.appendChild(img); 
+        assetsContainer.appendChild(imgContainer); 
         displayInfo(info, imgContainer);
     }
+
     async function displayInfo(info, imgDiv){
         try {
                 // Fetch data from Google Sheets
@@ -175,15 +199,17 @@
             console.log(data);
             data.forEach((line) => {
 
-                // MAKE HEADINGS THAT START W * BOLD
-                if (line.FILENAME.startsWith("info")){
+                // GET PAINTING INFO FROM GOOG SHEET BASED ON FILENAME
+                if (line.FILENAME.startsWith(info)){
                     const pInfo = document.createElement("p");
-                    pInfo.textContent = "hi" + line.NAME + line.YEAR + line.MATERIAL> + line.DIMENSIONS;
-                    
+                    pInfo.innerHTML = line.NAME + "<br>" + line.YEAR + "<br>" + line.MATERIAL + "<br>" +  line.DIMENSIONS;
+                    console.log("hi" + line.NAME + line.YEAR + line.MATERIAL + line.DIMENSIONS);
+                    imgDiv.appendChild(pInfo);
 
                 }
                 
             }
+
         
         );
         } catch (error) {
