@@ -20,6 +20,11 @@
             display: block;
             word-wrap: break-word;
         }
+        .backgroundColor{
+            background-color: rgb(220, 236, 215);
+            height: 100vh;
+            width: 100%;
+        }
     </style>
 
 </head>
@@ -43,9 +48,10 @@
         <button class="seriesbtn" id="6">Sketches : 1972 - present</button>
         <button class="seriesbtn" id="7">Justice (social/environmental/global peace-themed work) : 2020 - Present</button>
         </div>
+        <div class="backgroundColor">
     <div class="assets_container">loading...</div>
 
-    
+        </div>  
     
 
 
@@ -180,6 +186,7 @@
 
     // Function to display an image
     function displayImage(url, info) {
+
         const imgContainer = document.createElement("div");
         imgContainer.className = "imgContainer";
         const img = document.createElement("img");
