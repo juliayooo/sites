@@ -65,6 +65,8 @@
         const bgImage = "assets/paintings_numbered/" + counter + "paint.jpeg";
         const currImage = document.createElement("img");
         currImage.src = bgImage;
+        currImage.style.width = ("fit-content");
+
         const slideshowContainer = document.querySelector(".slideshowContainer");
         slideshowContainer.innerHTML = "";
         slideshowContainer.appendChild(currImage);
