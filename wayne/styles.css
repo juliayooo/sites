@@ -179,8 +179,8 @@ a{
     flex-direction: column; 
     justify-content: center; 
     position: absolute;
-    padding-left: 0vw;
-    padding-right: 0vw;
+    padding-left: 5vw;
+    padding-right: 5vw;
     width: 100%;
     box-sizing: border-box;
 
