@@ -117,22 +117,63 @@ a{
     border-top-right-radius: 20px;
 
 }
-
+/* responsive */
+@media only screen and (max-width: 1000px) {
+    .series-container{
+        display: block;
+        flex-wrap: wrap;
+        width: 100vw;
+    }
+    .seriesbtn{
+        width: 100vw;
+        font-family: "Lexend Exa";
+        background-color: rgb(172, 206, 162);
+        border: 0px;
+        padding: 10px;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+    
+    }
+}
 /* CV */
 
 .cv-container{
-    position: absolute;
 
     /* centering and layout */
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column; 
     justify-content: center; 
     position: absolute;
-    padding-left: 20vw;
-    padding-right: 20vw;
+    padding-left: 10vw;
+    padding-right: 10vw;
+    width: 100%;
+    box-sizing: border-box;
 
     /* style */
     font-family: "Lexend Exa";
+}
+
+@media only screen and (max-width: 830px) {
+.cv-container{
+
+    /* centering and layout */
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column; 
+    justify-content: center; 
+    position: absolute;
+    padding-left: 0vw;
+    padding-right: 0vw;
+    width: 100%;
+    box-sizing: border-box;
+
+    margin: 1vw;
+    /* style */
+    font-family: "Lexend Exa";
+}
 }
 
 /* socials  */
