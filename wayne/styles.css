@@ -1,5 +1,46 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Lexend+Exa:wght@100..900&display=swap');
+/* responsive */
+@media only screen and (max-width: 1000px) {
+    .series-container{
+        display: block;
+        flex-wrap: wrap;
+        width: 100vw;
+    }
+    .seriesbtn{
+        width: 100vw;
+        font-family: "Lexend Exa";
+        background-color: rgb(172, 206, 162);
+        border: 0px;
+        padding: 10px;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+    
+    }
+    nav{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        width: 100%;
+        font-size: large;
+        font-family: Lexend Exa;
+
+    }
+}
+@media only screen and (min-width: 1000px) {
+
+    nav{
+        box-sizing: border-box;
+        display: flex;
+        justify-content: space-around;  
+        font-family: Lexend Exa;
+        font-size: 1.5vw;
+        width: 100%;
+      
+    }
+}
 body{
  background-color: rgb(255, 255, 255);   
  overflow-x: hidden;
@@ -25,15 +66,7 @@ h1, h2, p{
     font-weight: bold;
 }
 
-nav{
-    display: flex;
-    justify-content: space-around;  
-    font-family: Lexend Exa;
-    font-size: 1.5vw;
-    width: 100%;
-  
 
-}
 a{
     color: rgb(76, 88, 72); 
 }
@@ -117,26 +150,7 @@ a{
     border-top-right-radius: 20px;
 
 }
-/* responsive */
-@media only screen and (max-width: 1000px) {
-    .series-container{
-        display: block;
-        flex-wrap: wrap;
-        width: 100vw;
-    }
-    .seriesbtn{
-        width: 100vw;
-        font-family: "Lexend Exa";
-        background-color: rgb(172, 206, 162);
-        border: 0px;
-        padding: 10px;
-        border-top-left-radius: 20px;
-        border-top-right-radius: 20px;
-        border-bottom-left-radius: 20px;
-        border-bottom-right-radius: 20px;
-    
-    }
-}
+
 /* CV */
 
 .cv-container{
