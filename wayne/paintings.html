@@ -13,16 +13,21 @@
             flex-wrap: wrap;
             flex-direction: row;
             justify-content: left;
+            
         }
         .imgContainer p{
+            margin-left: 1vw;
             text-align: left;
             display: block;
             word-wrap: break-word;
         }
         .backgroundColor{
-            background-color: rgb(220, 236, 215);
+            background-color: rgb(205, 205, 205);
             height: 100vh;
             width: 100%;
+        }
+        button{
+            color: black;
         }
     </style>
 
@@ -39,13 +44,13 @@
     <br>
     <h1>Paintings</h1>
     <div class="series-container">
-        <button class="seriesbtn" id="1">Reminiscing Home : 1972 - 1980</button>
-        <button class="seriesbtn" id="2">Portraits : 90s - present</button>
-        <button class="seriesbtn" id="3">Inside Africa : 2000s</button>
-        <button class="seriesbtn" id="4">Naturally Beautiful (nature-based work) : 2000s</button>
-        <button class="seriesbtn" id="5">Bubbles : 2020 - present</button>
-        <button class="seriesbtn" id="6">Sketches : 1972 - present</button>
-        <button class="seriesbtn" id="7">Justice (social/environmental/global peace-themed work) : 2020 - Present</button>
+        <button class="seriesbtn" id="1">Reminiscing Home</button>
+        <button class="seriesbtn" id="2">Portraits</button>
+        <button class="seriesbtn" id="3">Inside Africa</button>
+        <button class="seriesbtn" id="4">Naturally Beautiful</button>
+        <button class="seriesbtn" id="5">Bubbles</button>
+        <button class="seriesbtn" id="6">Sketches</button>
+        <button class="seriesbtn" id="7">Justice</button>
         </div>
         <div class="backgroundColor">
     <div class="assets_container">loading...</div>
@@ -125,9 +130,9 @@
             const tabs = document.querySelectorAll(".seriesbtn");
             tabs.forEach(tab => {
                 
-                    tab.style.backgroundColor = "rgb(150, 178, 142)";
+                    tab.style.backgroundColor = "rgb(163, 163, 163)";
             });
-            currSelect.style.backgroundColor = "rgb(220, 236, 215)";
+            currSelect.style.backgroundColor = "rgb(205, 205, 205)";
         }
 
         // Import the functions you need from the SDKs you need
